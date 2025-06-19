@@ -1,0 +1,1169 @@
+/*1. GLOBAL RESET ve TEMEL AYARLAR*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Exo 2", sans-serif;
+}
+
+/* Tam genişlik ve yatay taşmayı önleme */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/*2. CSS DEĞİŞKENLERİ (RENKLER vb.)*/
+:root {
+  --background-color-1: #ffffff;
+  --background-color-2: #f1f8ff;
+  --background-color-3: #f39c11;
+  --text-color-1: #ffffff;
+  --text-color-2: #395389;
+  --text-color-3: #616161;
+  --text-color-4: #1b1f22;
+}
+
+/*section-white / section-blue */
+.section-white {
+  position: relative;
+  background-color: var(--background-color-1);
+  padding: 65px 0 35px 0;
+  width: 100%;
+}
+
+.section-blue {
+  background-color: var(--background-color-2);
+  position: relative;
+  padding: 65px 0 35px 0;
+  width: 100%;
+}
+
+section h2 {
+  color: var(--text-color-2);
+  font-weight: 800;
+  text-align: center;
+  font-size: 28px;
+}
+
+.section-white.p,
+.section-blue.p {
+  color: var(--text-color-3);
+  font-weight: 600;
+  text-align: center;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 6px;
+  background-color: var(--background-color-3);
+  margin: 8px auto 34px;
+  border-radius: 3px;
+}
+
+/* HEADER & HERO ALANI*/
+.header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-image: url("../images/hero-man.jpg");
+  background-position: center;
+  height: 97vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+/* Navbar */
+/* Navbar konteyneri */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 390px 0 250px;
+  position: fixed;
+  z-index: 200;
+}
+
+/* Scroll sonrası eklenecek sınıf */
+.navbar-scroll {
+  background-color: #355592;
+}
+/* Menü listesi*/
+.navbar ul {
+  display: flex;
+  gap: 26px;
+}
+
+.navbar ul a {
+  color: var(--text-color-1);
+  font-size: 15px;
+  font-weight: 800;
+}
+/* Navbar'daki son a etiketi (CTA) */
+.navbar ul li:last-child a {
+  background-color: var(--background-color-3);
+  align-items: first baseline;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/*logo*/
+.logo img {
+  width: 75%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero CTA butonu */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 250px;
+  position: relative;
+  width: 80%;
+  margin-top: 150px;
+}
+/* Ana sayfadaki buton stilleri */
+.home-button {
+  display: inline-block;
+  background-color: #355494;
+  font-weight: 700;
+  color: var(--text-color-1);
+  border-radius: 3px;
+  padding: 6px 14px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Başlık konteyneri */
+.home-top-h1 {
+  width: 60%;
+}
+/* Ana sayfadaki başlık stilleri */
+.home-top-h1 h1 {
+  color: var(--text-color-1);
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 1.3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+/* Ana sayfadaki paragraf stilleri */
+.home p {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--text-color-1);
+  font-weight: 700;
+  padding: 5px 28px 5px 16px;
+  font-size: 25px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+/* Hero buton grubu */
+.home-buttons {
+  display: flex;
+  justify-content: start;
+  padding-left: 20px;
+  gap: 40px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.home-buttons .sign-up {
+  background-color: var(--text-color-2);
+  color: var(--text-color-1);
+  border-radius: 3px;
+  padding: 4px 18px;
+}
+/* Detaylar butonu stilleri */
+.home-buttons .details {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--text-color-1);
+  border-radius: 3px;
+  padding: 4px 18px;
+  border: 2px solid var(--text-color-1);
+}
+
+/*Boxes*/
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.section-blue.pad {
+  padding: 34px;
+}
+
+.home-box {
+  background-color: var(--background-color-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: auto;
+  padding: 12px 16px 22px 16px;
+  gap: 18px;
+}
+/* Kutu içindeki h2 stili */
+.home-box span {
+  font-size: 24px;
+  color: var(--text-color-2);
+  font-weight: 900;
+}
+/* Kutu içindeki p stili */
+.home-box p {
+  color: var(--text-color-4);
+  font-size: 18px;
+  font-weight: 900;
+}
+/* Arka plan için kesim yolu */
+.section-white.classes::after {
+  content: "";
+  position: absolute;
+  left: 35%; /* Sola hizala */
+  top: 0;
+  width: 100%; /* Mobilde taşmayı engelle */
+  height: 100%;
+  background-color: #f6f6f6;
+  z-index: -2;
+  clip-path: polygon(0 0, 65% 0, 65% 68%, 20% 68%);
+}
+/* Z-index'i 2 olarak ayarla, böylece bölüm arka planda kalmaz */
+.section-white.classes {
+  z-index: 2;
+}
+.classes-container {
+  width: 100%;
+}
+.classes-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+/* Div içindeki her p etiketi için ortak stil */
+.classes-info-p p {
+  color: var(--text-color-3);
+  font-weight: 600;
+  text-align: center;
+}
+/* P etiketinin üst kenar boşluğu */
+.classes-info-p p {
+  margin-top: 4px;
+}
+/* Classes buton grubu */
+.classes-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  margin-top: 40px;
+}
+/* Tıklanan buton highlight */
+.highlight {
+  background-color: var(--background-color-3) !important;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  filter: drop-shadow(0 0 4px var(--background-color-3));
+  position: relative;
+}
+/* Tıklanan buton altındaki üçgen */
+.highlight::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: var(--background-color-3) transparent transparent transparent;
+  transform: translateX(-50%);
+}
+/* Her buton için ortak stil */
+.classes-buttons button {
+  background-color: var(--text-color-2);
+  color: var(--text-color-1);
+  border-radius: 3px;
+  padding: 6px 16px;
+  font-weight: 700;
+  border: none;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+/* Dinamik içerik alanı */
+.classes-choosen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+  line-height: 1.5;
+}
+/* Değişen bilgi için stil */
+.classes-choosen-info {
+  width: 26%;
+  text-align: justify;
+}
+/* Değişen bilgi içindeki h3 etiketi stili */
+.classes-choosen-info h3 {
+  color: var(--text-color-3);
+  font-weight: 800;
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+/* Değişen bilgi içindeki p etiketi stili */
+.classes-choosen-info p {
+  color: var(--text-color-3);
+  font-weight: 600;
+}
+/* Spesifik boşluklar */
+.classes-choosen-info #info-desc {
+  margin-bottom: 28px;
+}
+.classes-choosen-info #info-time-title {
+  margin-bottom: 20px;
+}
+.classes-choosen-info #info-time {
+  margin-bottom: 20px;
+}
+.classes-choosen-info #info-time-add {
+  margin-bottom: 20px;
+}
+/* Resim içeren divin boyutu */
+.classes-choosen-photo {
+  width: 22%;
+}
+/* Div içindeki resim için boyutlandırma */
+.classes-choosen-photo img {
+  width: 100%;
+  object-fit: cover;
+}
+/* BMI hesaplaması için stil */
+.bmi-calculator {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 140px;
+  line-height: 1.5;
+}
+/* Sol taraftaki bilgi için stil */
+.bmi-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+/* Sol taraftaki üst bilgi için stil */
+.bmi-info-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+/* bmi-info-top içindeki tüm p etiketleri için üst kenar boşluğu */
+.bmi-info-top p ~ p {
+  margin-top: 20px;
+}
+/* Sol taraftaki bilgi için genel stil */
+.bmi-info-top p {
+  color: var(--text-color-3);
+  font-weight: 600;
+}
+/* Sol taraftaki başlık için stil */
+.bmi-info-top h3 {
+  color: var(--text-color-2);
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+/* Ağırlık ve boyut girişleri için genel stil */
+.bmi-inputs {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+}
+.bmi-input {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+/* bmi-input içindeki her giriş için stil */
+.bmi-inputs input {
+  margin: 0 1px;
+  width: 80%;
+  padding: 2px 2px;
+  border-radius: 3px;
+  border: 1.7px solid rgb(69, 68, 68);
+}
+/* bmi-img divinin stili */
+.bmi-img {
+  width: 32%;
+  position: relative;
+  display: inline-block;
+}
+/* bmi-img içindeki resim için boyutlandırma */
+.bmi-img img {
+  width: 100%;
+  object-fit: cover;
+}
+/* BMI hesaplamasında resmin altındaki gösterge */
+#bmi-indicator {
+  position: absolute;
+  bottom: -20px;
+  left: 25px;
+  transition: left 0.5s ease-in-out;
+  width: 20px;
+  height: 20px;
+  background: var(--background-color-3);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+/*Trainers Bölümü*/
+/* Genel kapsayıcı içindeki p etiketleri için stil */
+.trainers-p p {
+  line-height: 1.5;
+}
+/* Tüm kutuları içeren genel kapsayıcı için stil */
+.trainers-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 70px;
+}
+/* Kutular için ortak stil */
+.trainer-box {
+  position: relative;
+  width: 15%;
+  border-radius: 6px;
+  border: 2px solid var(--background-color-3);
+}
+
+/* Çubuklar (hover dekorasyonu) */
+.trainer-box .top-bar {
+  content: "";
+  position: absolute;
+  top: -7.5px;
+  left: 50%;
+  width: 60px;
+  height: 6px;
+  background-color: var(--text-color-2);
+  transform: translateX(-50%);
+}
+
+/* Alt Çubuk */
+.trainer-box .bottom-bar {
+  content: "";
+  position: absolute;
+  bottom: -7.5px;
+  left: 50%;
+  width: 60px;
+  height: 6px;
+  background-color: var(--text-color-2);
+  transform: translateX(-50%);
+}
+
+/* Sol Çubuk */
+.trainer-box .left-bar {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 6px;
+  height: 80px;
+  background-color: var(--text-color-2);
+  transform: translateY(-50%);
+}
+
+/* Sağ Çubuk */
+.trainer-box .right-bar {
+  position: absolute;
+  top: 50%;
+  right: -8px; /* Sağ çubuğu biraz daha sağa kaydırdık */
+  width: 6px; /* Kalınlığı artırıldı */
+  height: 80px;
+  background-color: var(--text-color-2);
+  transform: translateY(-50%);
+}
+/* Kutular içindeki resim stilleri */
+.trainer-box img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+/* İlk ve son kutu özel kenar çubuk kalınlığı */
+.trainers-boxes .trainer-box:first-child .left-bar {
+  left: -8px; /* İlk kutunun sol çubuğu biraz daha sola */
+  width: 7px;
+}
+
+.trainers-boxes .trainer-box:last-child .right-bar {
+  right: -8px; /* Son kutunun sağ çubuğu biraz daha sağa */
+  width: 7px;
+}
+/* Hover katmanı */
+.trainers-layer {
+  color: var(--text-color-1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  background-color: var(--text-color-2);
+  clip-path: polygon(
+    5% 25%,
+    20% 25%,
+    20% 10%,
+    80% 10%,
+    80% 25%,
+    95% 25%,
+    95% 75%,
+    80% 75%,
+    80% 90%,
+    20% 90%,
+    20% 75%,
+    5% 75%
+  );
+}
+/* Üzerine gelindiğinde, trainers-layer görünür hale gelir */
+.trainer-box:hover .trainers-layer {
+  z-index: 2;
+}
+/* Üzerine gelindiğinde, sol, sağ ve alt çubukların boyutunu ve konumunu değiştir */
+.trainer-box:hover .left-bar {
+  top: 75%;
+  height: 150px;
+  transform: translateY(-80%);
+}
+.trainer-box:hover .right-bar {
+  top: 75%;
+  height: 150px;
+  transform: translateY(-80%);
+}
+.trainer-box:hover .bottom-bar {
+  left: 50%;
+  width: 160px;
+  transform: translateX(-50%);
+}
+
+/*PURCHASE SECTION*/
+.purchase-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+/* Her kutu için ortak stil */
+.purchase-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  padding: 0 0 6px 0;
+}
+/*Resimler için stil */
+.purchase-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+/* Alt kısım için stil */
+.box-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(56, 56, 56);
+}
+/* Kutunun altındaki p etiketleri için stil */
+.box-bottom p {
+  font-size: 20px;
+}
+/* Kutunun altındaki span etiketleri için*/
+.box-bottom span {
+  font-size: 12px;
+  font-weight: 800;
+}
+/* Üzerinde çizili fiyat için del etiketi stili */
+del {
+  text-decoration: line-through;
+  color: rgb(56, 56, 56);
+  font-weight: bold;
+}
+/* Genel stil için div, simge ve sepete ekle metni içeren div */
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+/* Simge divinin içindeki ilk span sola hizalanır */
+.icon span:nth-child(1) {
+  position: absolute;
+  left: -50px;
+}
+/* İnceleme için genel stil */
+.review-p-1,
+.review-p-2 {
+  color: var(--text-color-3);
+  font-weight: 600;
+  text-align: center;
+}
+/* Sayfanın genel kapsayıcı stili */
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
+}
+.review-p {
+  line-height: 1.4;
+}
+/* Sol ve sağ kutuları içeren div */
+.review-boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin: 60px 0 80px 0;
+}
+/* Sol ve sağ kutular için ortak stil */
+.review-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 46%;
+  max-width: 460px;
+  position: relative;
+}
+/* Kutuların üst kısmı için ortak stil */
+.review-top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+/* Kutuların üst kısmındaki bilgi için ortak stil */
+.review-top-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+/* Kutular içindeki resim divi için stil */
+.review-img {
+  width: 50px;
+  height: 40%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+/* Resim divi içindeki resim için boyutlandırma ve stil */
+.review-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* Genel stil verilmemiş p etiketleri için özel stil */
+.review-top-info p {
+  color: rgb(47, 47, 47);
+  font-weight: 700;
+}
+.review-top-info span {
+  font-size: 14px;
+  color: rgb(47, 47, 47);
+}
+/* Kutuların alt kısmı için stil */
+.review-bottom {
+  background-color: var(--text-color-2);
+  padding: 12px 24px;
+  line-height: 1.4;
+  position: relative;
+  width: 100%;
+}
+/* Kutuların sol alt köşesindeki üçgen */
+.review-bottom::before {
+  content: "";
+  position: absolute;
+  bottom: -34.2px; /* Daha belirgin olması için artırıldı */
+  left: -29.9px;
+  width: 65px;
+  height: 35px;
+  background-color: #395289a7;
+  clip-path: polygon(100% 0, 45% 0, 100% 100%);
+}
+
+/* Kutuların sağ alt köşesi */
+.review-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -35.2px; /* Daha belirgin olması için artırıldı */
+  width: 70px;
+  height: 35px;
+  background-color: #395289a7;
+  right: -39px;
+  clip-path: polygon(45% 0, 0 0, 0 100%);
+}
+/* Genel stil verilmemiş p etiketi için özel stil */
+.review-bottom p {
+  color: var(--text-color-1);
+  font-weight: 400;
+}
+/* İletişim bölümü için genel kapsayıcı stil */
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* Form ve harita içeren div için stil */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+/* Sol taraftaki form ve sağ taraftaki harita için ortak stil */
+.contact-div,
+.map-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  box-sizing: border-box;
+}
+/* İletişim bölümünün üst kısmı için stil */
+.contact-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+/* İletişim bölümünün üst kısmındaki p etiketleri için stil */
+.contact-top .phone-p,
+.contact-top .email-p {
+  font-size: 13px;
+  margin-top: 8px;
+}
+/* İletişim bölümünün alt kısmı için stil */
+.contact-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+/* Form elemanlarını içeren div için genel stil */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 20px;
+}
+/* Form elemanları için stil */
+.form-group input,
+.form-group textarea {
+  background-color: var(--background-color-2);
+  border: none;
+  width: 100%;
+  padding: 6px 180px 6px 8px;
+  box-sizing: border-box;
+}
+/* Özel stil için textarea */
+.form-group textarea {
+  resize: vertical;
+  padding: 10px 180px 10px 8px;
+  height: 100px;
+}
+/* Iframe için boyutlandırma */
+.map-div iframe {
+  width: 100%;
+  height: 300px;
+}
+/* Alt bilgi rengi ve genel stil */
+.footer {
+  background-color: var(--text-color-2);
+  color: var(--text-color-1);
+  padding-bottom: 16px;
+}
+/* Logo boyutu */
+.footer-top img {
+  width: 180px;
+}
+/* Logo ve altındaki p etiketi için stil */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 0 200px;
+}
+/* Bağlantılar için genel div stili */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+/* Bağlantıları içeren divler için ortak stil */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: var(--text-color-1);
+}
+.footer-bottom h3 {
+  font-size: 22px;
+}
+/* menüyü varsayılan olarak gizle */
+.menu-hmbrgr {
+  display: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+/* 576px altındaki duyarlı tasarım ayarları */
+@media (max-width: 576px) {
+  /* Genel başlık boyutunu küçült */
+  section h2 {
+    font-size: 20px;
+  }
+  /* Yeniden boyutlandır */
+  .header {
+    background-size: cover;
+    background-position: center;
+  }
+  /* 576px altındaki hamburger simgesi görünür */
+  .menu-hmbrgr {
+    display: block;
+    color: #ffffff;
+  }
+  /* Navbar'ı dikey hale getir */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 0;
+  }
+  /* Menü */
+  .navbar ul.show {
+    display: flex;
+  }
+  .navbar ul li {
+    padding: 10px 0;
+  }
+  /* Menünde son öğe için özel stil */
+  .navbar ul li:last-child a {
+    color: var(--text-color-1);
+    font-size: 15px;
+    font-weight: 800;
+    background-color: transparent;
+    align-items: first baseline;
+    text-transform: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  /* Logo */
+  .logo img {
+    width: 70%;
+  }
+  /* Navbar içi boşluk ayarları */
+  .navbar {
+    padding: 0 50px 0 14px;
+  }
+  /* Ana sayfa divi için genel ayarlamalar */
+  .home {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 10px;
+    margin-top: 160px;
+  }
+  .home-top-h1 {
+    width: 100%;
+  }
+  .home-top-h1 h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+  }
+  .home p {
+    font-size: 15px;
+    padding: 4px 18px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .home-button {
+    padding: 2px 14px;
+  }
+  /* Home*/
+  .home-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+    gap: 4px;
+    font-weight: 800;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .home-buttons .sign-up,
+  .home-buttons .details {
+    width: 100%;
+    padding: 6px 20px;
+    box-sizing: border-box;
+  }
+  .boxes {
+    flex-direction: column;
+    width: 100%;
+  }
+  .home-box {
+    width: 100%;
+  }
+  /* Classes */
+  .classes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .classes-info-p {
+    width: 70%;
+  }
+  .section-white.classes::after {
+    left: 30%;
+    clip-path: polygon(0 0, 70% 0, 70% 63%, 20% 63%);
+  }
+  .classes-choosen {
+    flex-direction: column;
+    align-items: flex-start !important;
+    width: 100%;
+    text-align: justify;
+    gap: 20px;
+    padding: 0;
+  }
+  .classes-choosen-info {
+    width: 100%;
+    text-align: justify;
+    padding: 0 20px;
+  }
+  .classes-choosen-info #info-title,
+  .classes-choosen-info #info-time-title {
+    text-align: start;
+    font-size: 24px;
+  }
+  .classes-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    margin: 40px 0;
+  }
+  .classes-buttons button {
+    padding: 6px 16px;
+    font-weight: 800;
+    margin-bottom: 0;
+    font-size: 16px;
+  }
+  .classes-choosen-photo {
+    margin-top: 0;
+    width: 100%;
+  }
+  /* BMI*/
+  .bmi-calculator {
+    flex-direction: column;
+    align-items: start;
+    margin-top: 120px;
+    line-height: 1.5;
+    width: 100%;
+  }
+  .bmi-info {
+    width: 100%;
+    text-align: justify;
+    padding: 0 20px;
+  }
+  .bmi-info-top h3 {
+    font-size: 30px;
+  }
+  .bmi-info-top p ~ p {
+    margin-top: 20px;
+  }
+  .bmi-inputs {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .bmi-input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    width: 80%;
+  }
+  .bmi-inputs input {
+    margin: 0;
+    width: 80%;
+    padding: 2px 2px;
+  }
+
+  .bmi-img {
+    width: 100%;
+  }
+  /* Trainers */
+  .trainers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .trainers-p {
+    width: 70%;
+    line-height: 1.5;
+  }
+  .trainers-boxes {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 40px;
+  }
+  /* Satın alma için düzenlemeler */
+  .purchase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .purchase-p {
+    width: 75%;
+    line-height: 1.4;
+  }
+  .trainer-box {
+    width: 80%;
+  }
+  /* Purchase Boxes */
+  .purchase-boxes {
+    flex-direction: column;
+  }
+  .purchase-box {
+    flex-direction: column;
+    width: 75%;
+  }
+  /* Review */
+  .review {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .review-p {
+    line-height: 1.4;
+    width: 75%;
+  }
+  .review-boxes {
+    flex-direction: column;
+    gap: 60px;
+    margin: 40px 0 60px 0;
+  }
+  .review-box {
+    width: 100%;
+  }
+  /* Contact  */
+  .contact-div {
+    padding: 0 30px;
+  }
+  .contact-container {
+    flex-direction: column;
+    margin-top: 70px;
+  }
+  .contact-p {
+    width: 75%;
+    line-height: 1.4;
+  }
+  .contact-div,
+  .map-div {
+    width: 100%;
+  }
+  .contact-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .contact-top .phone-p,
+  .contact-top .email-p {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .form-group {
+    margin-top: 20px;
+    gap: 30px;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px;
+  }
+  .map-div iframe {
+    padding: 0 10px;
+  }
+  /* Alt bilgi düzenlemeleri */
+  .footer-top {
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 1.4;
+  }
+  .footer p {
+    font-size: 12px;
+  }
+  .footer-links h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}
+/* Hamburger menüyü 576px'den büyük ekranlarda gizle */
+@media (min-width: 577px) {
+  .menu-hmbrgr {
+    display: none !important;
+  }
+}
